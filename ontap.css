@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@1,300&family=Oswald:wght@300;400&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+}
+html, body{
+    width: 100%;
+    height: 100%;
+}
+header{
+    width: 100%;
+    height: 100%;
+    font-size: 18px;
+}
+header .menu{
+    width: 6%;
+    height: 100%;
+    /* cố định ko lăn lên lăn xuống theo chuột */
+    position: fixed;
+    box-sizing: border-box;
+    box-shadow: 0 .5rem 1rem darkgrey;
+    padding: 10px 0px;
+    background-color: whitesmoke;
+    z-index: 5;
+}
+.menu a.logo{
+    width: 100%;
+    text-align: center;
+    display: block;
+}
+.menu a.logo img{
+    width: 4em;
+}
+.menu .bx-menu{
+    font-size: 3em;
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translateX(-50%) translateY(-50%);
+    cursor: pointer;
+}
+.menu .bx-search{
+    bottom: 1%;
+    left: 50%;
+    font-size: 3em ;
+    transform: translateX(-50%);
+    cursor: pointer;
+    position: absolute;
+}
+header .bg{
+    background-image: url(./images/hinhanh.jpg);
+    width: 94%;
+    height: 100%;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    /* đẩy backgr qua phải */
+    margin-left: 6%;
+    /* float: right cũng được ( hạn chế dùng ) */
+    position: relative;
+}
+.bg .text{
+    font-family: 'Oswald', sans-serif;
+    font-size: 60px;
+    color: whitesmoke;
+    width: 50%;
+    text-transform: uppercase;
+    transform:  translateX(2em) translateY(4em);
+}
+.bg .scroll-img{
+    position: absolute;
+    bottom: 2%;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: 1.5s muiten infinite;
+}
+.bg .scroll-img img{
+    height: 30px;
+}
+.content{
+    width: 20vw;
+    height: 100vh;
+    background-color: red;
+    margin-left: 6%;
+}
+.doimau{
+    color: brown;
+}
+
+
+@keyframes muiten{
+    from {
+        bottom: 3%;
+        opacity: 1;
+    }
+    to {
+        bottom: 1%;
+        opacity: 0;
+    }
+    /* from {transform: translateY(-50%); opacity: 1;}
+
+    to{transform: translateY(0%); opacity: 0;} */
+    /* 0%{ bottom: 3%; opacity: 1;
+        100% {bottom:1% ; opacity: 1; */
+}
+@media(max-width: 1024px){
+    header .menu{
+        width: 100vw;
+        height: 60px;
+    }
+    .menu .bx-menu{
+        left: 5%;
+    }
+    .menu .bx-search{
+        left: 95%;
+    }
+    header .bg{
+        width: 100vw; 
+        margin-left: 0; 
+    }
+    header .bg .text{
+        width: 100vw;
+        font-size: -24px;
+    }
+}
